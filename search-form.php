@@ -11,12 +11,12 @@ if ( ! defined( 'WPINC' ) ) {
         $search_results = null;
     }
 ?>
-<div>Search</div>
+<div><?php _e('Search bookings','as-em-search');?></div>
 <form method="get">
     <input type="hidden" name="post_type" value="<?php echo EM_POST_TYPE_EVENT;?>">
     <input type="hidden" name="page" value="events-manager-search-form">
     <input type="text" name="as_em_search" value>
-    <button type="submit">Search</button>
+    <button type="submit"><?php _e('Search','as-em-search');?></button>
 </form>
 
 <div>
@@ -24,11 +24,11 @@ if ( ! defined( 'WPINC' ) ) {
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>City</th>
-                    <th>Phone</th>
-                    <th>Spaces</th>
+                    <th><?php _e('Name', 'as-em-search');?></th>
+                    <th><?php _e('Email', 'as-em-search');?></th>
+                    <th><?php _e('City','as-em-search');?></th>
+                    <th><?php _e('Phone','as-em-search');?></th>
+                    <th><?php _e('Spaces','as-em-search');?></th>
                 </tr>
             </thead>
             <tbody>

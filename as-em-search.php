@@ -12,8 +12,10 @@
  * @wordpress-plugin
  * Plugin Name:       AS EM Search
  * Description:       Makes it possible to search in bookings and events
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            KoenG
+ * Text Domain:       as-em-search
+ * Domain Path:       /languages
  * Author URI:        http://www.appsaloon.be
  */
 
@@ -28,8 +30,8 @@ function as_em_search_admin_menu($plugin_pages){
     $plugin_pages['search_form'] =
         add_submenu_page(
             'edit.php?post_type='.EM_POST_TYPE_EVENT,
-            __('Search','as_em_search'),
-            __('Search','as_em_search'),
+            __('Search bookings','as-em-search'),
+            __('Search bookings','as-em-search'),
             'list_users',
             "events-manager-search-form",
             'as_em_search_show_form'
@@ -61,3 +63,8 @@ function as_em_get_event_name( $event_id ) {
 
     return $event['event_name'];
 }
+
+function as_em_search_load_plugin_textdomain() {
+    load_plugin_textdomain( 'as-em-search', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+add_action( 'plugins_loaded', 'as_em_search_load_plugin_textdomain' );
